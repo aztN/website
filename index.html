@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Coach HQ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function showTab(id) {
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      
+      const hero = document.querySelector('.hero');
+      if (id === 'home') {
+        hero.style.display = 'flex';
+      } else {
+        hero.style.display = 'none';
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.onload = () => showTab('home');
+  </script>
+</head>
+<body>
+  <nav>
+    <a href="#" onclick="showTab('home')">Home</a>
+    <a href="#" onclick="showTab('about')">About</a>
+    <a href="#" onclick="showTab('games')">Games</a>
+    <a href="#" onclick="showTab('contact')">Contact</a>
+  </nav>
+
+  <div class="hero">
+    <h1>Dominate the Game</h1>
+    <p>Elite Coaching for COD, CS2, Valorant & Fortnite</p>
+    <button onclick="showTab('about')">Learn More</button>
+  </div>
+
+  <div id="home" class="tab">
+    <h1>Welcome to Game Coach HQ</h1>
+    <p>Our mission is to level up your skills, fast. One-on-one coaching, team sessions, VOD reviews and more.</p>
+  </div>
+
+  <div id="about" class="tab">
+    <h1>About Us</h1>
+    <p>We are a team of esports veterans and professional coaches who’ve helped hundreds of players climb ranks and reach their goals. Our personalized sessions are tailored to your game and playstyle.</p>
+  </div>
+
+  <div id="games" class="tab">
+    <h1>Games We Coach</h1>
+    <ul>
+      <li><strong>Call of Duty</strong> – Advanced map strategy, precision aim, fast reflexes</li>
+      <li><strong>CS2</strong> – Smokes, executes, site retakes, IGL training</li>
+      <li><strong>Valorant</strong> – Agent comps, post-plant setups, team synergy</li>
+      <li><strong>Fortnite</strong> – Box fights, editing, zone awareness, 1vX tactics</li>
+    </ul>
+  </div>
+
+  <div id="contact" class="tab">
+    <h1>Contact Us</h1>
+    <p>Book your first free coaching consultation today.</p>
+    <button onclick="window.location.href='mailto:coach@gaminghq.com'">Email Coach</button>
+  </div>
+</body>
+</html>
